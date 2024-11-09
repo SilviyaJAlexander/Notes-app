@@ -6,6 +6,7 @@ import HomePage from './components/HomePage';
 import AddNote from './components/AddNote';
 import EditNote from './components/EditNote';
 import ViewNote from './components/ViewNote';
+import Test from './components/Test';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/add-note" element={<AddNote />} />
             <Route path="/edit-note/:id" element={<EditNote />} />
             <Route path="/note/:id" element={<ViewNote />} /> 
+            <Route path="/test" element={<Test />} /> 
           </Routes>
         </div>
       </Router>
