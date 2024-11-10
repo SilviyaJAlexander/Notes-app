@@ -14,13 +14,15 @@ const ViewNote = () => {
   if (!note) {
     return <p>Note not found</p>;
   }
+  // Convert createdAt to a date string if it exists and is valid
+  const createdAtDate = note.createdAt ? new Date(note.createdAt).toLocaleString() : "Unknown date";
 
   return (
     <div className="view-note">
       <h2>{note.title}</h2>
       <p>{note.content}</p>
       <p>Category: {note.category}</p>
-      <p>Created on: {new Date(note.createdAt).toLocaleString()}</p>
+      <p>Created on: {createdAtDate}</p>
     </div>
   );
 };

@@ -16,6 +16,7 @@ function AddNote() {
       title,
       content,
       category,
+      createdAt:Date.now(),
     });
     navigate('/');
   };

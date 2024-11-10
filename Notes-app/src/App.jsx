@@ -6,20 +6,26 @@ import HomePage from './components/HomePage';
 import AddNote from './components/AddNote';
 import EditNote from './components/EditNote';
 import ViewNote from './components/ViewNote';
-import Test from './components/Test';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Hero from './components/Hero';
 
 function App() {
   return (
     <NotesProvider>
       <Router>
-        <div className="min-h-screen bg-gray-300 p-4">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/add-note" element={<AddNote />} />
-            <Route path="/edit-note/:id" element={<EditNote />} />
-            <Route path="/note/:id" element={<ViewNote />} /> 
-            <Route path="/test" element={<Test />} /> 
-          </Routes>
+        <div className="min-h-screen flex flex-col">
+          <Header />
+          <Hero /> {/* Add Hero section at the top of the main content */}
+          <main className="flex-grow p-4">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/add-note" element={<AddNote />} />
+              <Route path="/edit-note/:id" element={<EditNote />} />
+              <Route path="/note/:id" element={<ViewNote />} />
+            </Routes>
+          </main>
+          <Footer />
         </div>
       </Router>
     </NotesProvider>
